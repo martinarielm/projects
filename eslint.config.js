@@ -29,7 +29,7 @@ export default tseslint.config(
 				{ allowConstantExport: true },
 			],
 			"no-console": "warn",
-			indent: ["error", "tab"],
+			// indent: ["error", "tab"],
 		},
 	},
 );
