@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import { Container } from "@mui/material";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import CssBaseline from "@mui/material/CssBaseline";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -22,6 +23,7 @@ export default function Root() {
 					</ul>
 				</nav>
 				<Outlet />
+				<SpeedInsights />
 			</Container>
 		</>
 	);
