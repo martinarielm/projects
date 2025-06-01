@@ -1,4 +1,4 @@
-import { Container, Grid, TextField } from "@mui/material";
+import { Container, Grid, Stack, TextField } from "@mui/material";
 import { CreditCardProvider } from "./context/CreditCardProvider";
 import { useCreditCardContext } from "./context/CreditCardContext";
 import {
@@ -23,43 +23,49 @@ function CreditCardFormContent() {
 	};
 
 	return (
-		<Container>
-			<Grid container spacing={2}>
-				<Grid size={6}>
-					<TextField
-						name={SET_CARD_NUMBER}
-						onChange={handleChange}
-						value={state.cardNumber}
-						label="Número de Tarjeta"
-						variant="outlined"
-						fullWidth
-					/>
-					<TextField
-						name={SET_CARD_NAME}
-						onChange={handleChange}
-						value={state.cardName}
-						label="Nombre del Titular"
-						variant="outlined"
-						fullWidth
-					/>
-					<TextField
-						name={SET_EXPIRATION_DATE}
-						onChange={handleChange}
-						value={state.expirationDate}
-						label="Fecha de Expiración"
-						variant="outlined"
-						fullWidth
-					/>
-					<TextField
-						name={SET_CVC}
-						onChange={handleChange}
-						value={state.cvc}
-						label="Código de Seguridad"
-						variant="outlined"
-						fullWidth
-					/>
+		<Container maxWidth="md">
+			<Grid container spacing={4}>
+				<Grid size={5}>
+					<Stack spacing={2}>
+						<TextField
+							label="Número de Tarjeta"
+							name={SET_CARD_NUMBER}
+							onChange={handleChange}
+							value={state.cardNumber}
+							variant="outlined"
+							size="small"
+							fullWidth
+						/>
+						<TextField
+							label="Nombre del Titular"
+							name={SET_CARD_NAME}
+							onChange={handleChange}
+							value={state.cardName}
+							variant="outlined"
+							size="small"
+							fullWidth
+						/>
+						<TextField
+							label="Fecha de Expiración"
+							name={SET_EXPIRATION_DATE}
+							onChange={handleChange}
+							value={state.expirationDate}
+							variant="outlined"
+							size="small"
+							fullWidth
+						/>
+						<TextField
+							label="Código de Seguridad"
+							name={SET_CVC}
+							onChange={handleChange}
+							value={state.cvc}
+							variant="outlined"
+							size="small"
+							fullWidth
+						/>
+					</Stack>
 				</Grid>
-				<Grid size={6}>
+				<Grid size={7}>
 					<CreditCardRender />
 				</Grid>
 			</Grid>

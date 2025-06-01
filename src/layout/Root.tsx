@@ -1,6 +1,7 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Container } from "@mui/material";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import NavBar from "./NavBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -11,17 +12,8 @@ export default function Root() {
 	return (
 		<>
 			<CssBaseline />
-			<Container>
-				<nav>
-					<ul>
-						<li>
-							<Link to="/">Inicio</Link>
-						</li>
-						<li>
-							<Link to="/credit-card">Formulario de Tarjeta</Link>
-						</li>
-					</ul>
-				</nav>
+			<NavBar />
+			<Container sx={{ pt: 4 }} maxWidth="lg">
 				<Outlet />
 				<SpeedInsights />
 			</Container>
